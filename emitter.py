@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import time
 from actor import Sender
 
@@ -6,7 +7,8 @@ tcp_port = 1883
 topic_1 = '/python/mqtt'
 topic_2 = '/otro/topic'
 
-emitter_client = Sender(1, broker_host, tcp_port)
+emitter_id = input('Inserte el id del emisor: ')
+emitter_client = Sender(emitter_id, broker_host, tcp_port)
 
 while not emitter_client.client.is_connected():
     print('Esperando conexion ...')

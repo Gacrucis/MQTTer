@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import time
 from actor import Receiver
 
@@ -6,7 +7,8 @@ tcp_port = 1883
 topic_1 = '/python/mqtt'
 topic_2 = '/otro/topic'
 
-receiver_client = Receiver(2, broker_host, tcp_port)
+receiver_id = input('Inserte el id del recibidor: ')
+receiver_client = Receiver(receiver_id, broker_host, tcp_port)
 
 opt = None
 while opt != '3':
